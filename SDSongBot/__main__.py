@@ -13,7 +13,6 @@ pm_start_text = """
      
 Syntax : ```/dsong Faded```
       
-Powerd By @SDBotsz 🔥
 """
 
 @app.on_message(filters.command("start"))
@@ -22,18 +21,7 @@ async def start(client, message):
     user_id = message.from_user["id"]
     name = message.from_user["first_name"]
     if message.chat.type == "private":
-        btn = InlineKeyboardMarkup(
-            [
-                [
-                     InlineKeyboardButton(
-                        text="Channel 🙋‍♀️", url="https://t.me/SDBOTs_Inifinity"
-                    ),
-                    InlineKeyboardButton(
-                        text="Dev 🔥", url="https://t.me/Itz_Sadew"
-                    )
-                ]
-            ]
-        )
+        
     else:
         btn = None
     await message.reply(pm_start_text.format(name, user_id), reply_markup=btn)
@@ -41,11 +29,5 @@ async def start(client, message):
 
 app.start()
 LOGGER.info("""
-
-░██████╗██████╗░██████╗░░█████╗░████████╗░██████╗
-██╔════╝██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔════╝
-╚█████╗░██║░░██║██████╦╝██║░░██║░░░██║░░░╚█████╗░
-░╚═══██╗██║░░██║██╔══██╗██║░░██║░░░██║░░░░╚═══██╗
-██████╔╝██████╔╝██████╦╝╚█████╔╝░░░██║░░░██████╔╝
-╚═════╝░╚═════╝░╚═════╝░░╚════╝░░░░╚═╝░░░╚═════╝░ SDSongBot is online.""")
+ SongBot is online.""")
 idle()
